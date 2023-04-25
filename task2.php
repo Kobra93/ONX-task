@@ -8,3 +8,10 @@ class TextInput {
     return $this->value;
   }
 }
+class NumericInput extends TextInput {
+  public function add($text) {
+    if (is_numeric($text)) {
+      $this->value .= $text;
+    }
+  }
+}
