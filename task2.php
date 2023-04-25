@@ -15,3 +15,8 @@ class NumericInput extends TextInput {
     }
   }
 }
+$input = new NumericInput();
+$input->add('666');
+$input->add('abc');
+$input->add('777');
+echo $input->getValue();
