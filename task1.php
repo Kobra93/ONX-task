@@ -15,4 +15,4 @@ $pipe = Pipeline::make(
   function($var) { return $var / 2; }
 );
 
-echo $pipe(3); // 5
+echo $pipe(3);
