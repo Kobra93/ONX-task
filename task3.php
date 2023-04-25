@@ -15,3 +15,16 @@ class RankingTable {
         $this->scores[$player]['score'] += $score;
         $this->scores[$player]['games']++;
     }
+    public function playerRank($rank) {
+        arsort($this->scores);
+        $ranked = array();
+        foreach ($this->scores as $player => $score) {
+            $ranked[] = $player;
+        }
+        $ranked = array_unique($ranked);
+        if ($rank > count($ranked) || $rank < 1) {
+            throw new Exception('Invalid rank');
+        }
+        return $ranked[$rank - 1];
+    }
+}
