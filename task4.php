@@ -24,3 +24,12 @@ class Thesaurus
         ]);
     }
 }
+$thesaurusData = [
+    "market" => ["trade"],
+    "small" => ["little", "compact"],
+];
+
+$thesaurus = new Thesaurus($thesaurusData);
+
+echo $thesaurus->getSynonyms("small");
+echo $thesaurus->getSynonyms("asleast");
