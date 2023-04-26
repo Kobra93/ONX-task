@@ -13,4 +13,14 @@ class Thesaurus
     {
         $this->synonyms[$word] = $synonyms;
     }
+}   
+    public function getSynonyms(string $word): string
+    {
+        $synonyms = isset($this->synonyms[$word]) ? $this->synonyms[$word] : [];
+
+        return json_encode([
+            'word' => $word,
+            'synonyms' => $synonyms,
+        ]);
+    }
 }
