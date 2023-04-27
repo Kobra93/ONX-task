@@ -34,3 +34,6 @@ public function employee()
 {
     return $this->belongsTo(Employee::class);
 }
+$clients = Client::with(['employees' => function ($query) {
+    $query->with('orders')->latest();
+}])->get();
